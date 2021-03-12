@@ -20,13 +20,18 @@
     </style>
     <script>
       let map;
-      
+      var position = { lat: 13.847860, lng: 100.604274 };
 
       function initMap() {
         map = new google.maps.Map(document.getElementById("map"), {
-          center: { lat: 13.847860, lng: 100.604274 },
-          zoom: 10,
+          center: position,
+          zoom: 15,
         });
+
+        var marker = new google.maps.Marker({
+          position: position,
+          map:map,
+        })
       }
     </script>
   </head>
