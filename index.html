@@ -79,7 +79,7 @@
             "click",
             (function (marker, i) {
               return function () {
-                contentString = `<div> ${locations[i][0]}</div>`
+                contentString = `<div>${locations[i][0]}</div>`
                 infoWindow.setContent(contentString);
                 infoWindow.open(maps, marker);
               };
