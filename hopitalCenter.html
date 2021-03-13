@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover"
+    />
+    <title>Page Title</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" media="all" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" media="all" />
+    <link rel="stylesheet" href="css/style.css" media="all" />
+    <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" /> 
+
+<!--Font Awesome (added because you use icons in your prepend/append)-->
+<link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
+
+<!-- Inline CSS based on choices in "Settings" tab -->
+<style>.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form{font-family: Arial, Helvetica, sans-serif; color: black}.bootstrap-iso form button, .bootstrap-iso form button:hover{color: white !important;} .asteriskField{color: red;}</style>
+  </head>
+  <body>
+    
+ 
+      <script src="js/bootstrap.min.js"></script>
+      <div class="container d-flex justify-content-center" style="align-items: center; justify-content: center;">
+        <div class="main-header" >
+            <h3 class="headingmain" >เลือกเครื่องออกกำลังกาย</h3>
+            <div class="row">
+                <div class="col-sm-6" >
+                    <div class="card d-flex mx-auto"  style="align-self: center; justify-self: center;" onclick="showElem()">
+                        <div class="card-body"  style="align-self: center; justify-self: center;">
+                            <h3 class="card-title mb-4" >AQUABIKE </h3>
+                            <img src="image/7-removebg-preview.png" width="200" class="rounded-circle" > </div><small class="text-muted" style="align-self: center; justify-self: center;">เครื่องปั่นจักรยานใต้น้ำ </small>
+                            <p class="card-text text-muted my-2" style="align-self: center; justify-self: center;  ">เพื่อการออกกำลังกายที่แตกต่างและลดอาการบาดเจ็บจากการออกกำลังกาย ได้รับการออกแบบมาเพื่อสรีรศาตร์ของคนไทย ง่ายต่อการติดตั้งและเคลื่อนย้าย</p>
+                            
+                            <div id="myDIV" style="visibility:hidden; align-self: center; justify-self: center; width:200;"  >
+                           
+                               
+<div class="bootstrap-iso" >
+    <div class="container-fluid">
+     <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-12">
+       <form method="post">
+        <div class="form-group ">
+         <label class="control-label " for="date">
+          วันที่
+         </label>
+         <div class="input-group">
+          <div class="input-group-addon">
+           <i class="fa fa-calendar">
+           </i>
+          </div>
+          <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
+         </div>
+        </div>
+        <div class="form-group">
+         <div>
+          <button class="btn btn-dark btn-block" name="submit" type="submit">
+           จอง
+          </button>
+         </div>
+        </div>
+       </form>
+      </div>
+     </div>
+    </div>
+   </div>
+                            </div>
+                            
+                        </div>
+                         <div class="card d-flex mx-auto"  style="align-self: center; justify-self: center;" onclick="showElem2()">
+                        <div class="card-body"  style="align-self: center; justify-self: center;">
+                            <h3 class="card-title mb-4" >AQUATREK </h3>
+                            <img src="image/HTM2-removebg-preview.png" width="200" class="rounded-circle" > </div><small class="text-muted" style="align-self: center; justify-self: center;">เครื่องออกกำลังกายแบบสายพานวิ่งในน้ำ (Underwater Treadmill) </small>
+                            <p class="card-text text-muted my-2" style="align-self: center; justify-self: center;  ">สามารถลดการบาดเจ็บบริเวณข้อต่อและกล้ามเนื้อ และเป็นเครื่องช่วยกายภาพบำบัดให้กับผู้ป่วย รวมถึงเพื่อการออกกำลังกายอย่างมีประสิทธิภาพยิ่งขึ้</p>
+                            
+                            <div id="myDIV2" style="visibility:hidden; align-self: center; justify-self: center; width:200;"  >
+                           
+                               
+<div class="bootstrap-iso" >
+    <div class="container-fluid">
+     <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-12">
+       <form method="post">
+        <div class="form-group ">
+         <label class="control-label " for="date">
+          วันที่
+         </label>
+         <div class="input-group">
+          <div class="input-group-addon">
+           <i class="fa fa-calendar">
+           </i>
+          </div>
+          <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
+         </div>
+        </div>
+        <div class="form-group">
+         <div>
+          <button class="btn btn-dark btn-block" name="submit" type="submit">
+           จอง
+          </button>
+         </div>
+        </div>
+       </form>
+      </div>
+     </div>
+    </div>
+   </div>
+                            </div>
+                         
+                </div>  
+                <!-- new -->
+                <div class="card d-flex mx-auto"  style="align-self: center; justify-self: center;" onclick="showElem3()">
+                    <div class="card-body"  style="align-self: center; justify-self: center;">
+                        <h3 class="card-title mb-4" >AQUATRAIL </h3>
+                        <img src="image/3-removebg-preview.png" width="200" class="rounded-circle" > </div><small class="text-muted" style="align-self: center; justify-self: center;">ลู่วิ่ง-เดินในน้ำ </small>
+                        <p class="card-text text-muted my-2" style="align-self: center; justify-self: center;  ">เป็น ลู่วิ่ง-เดินในน้ำ ที่ไม่ใช้ไฟฟ้าง่ายต่อการติดตั้ง เพื่อการออกกำลังกาย การภาพบำบัด การพักฟื้นร่างกาย การฝึกส่วนตัวและการฝึกนักกีฬา และลดการบาดเจ็บจากการออกกำลังกาย</p>
+                        
+                        <div id="myDIV3" style="visibility:hidden; align-self: center; justify-self: center; width:200;"  >
+                       
+                           
+<div class="bootstrap-iso" >
+<div class="container-fluid">
+ <div class="row">
+  <div class="col-md-6 col-sm-6 col-xs-12">
+   <form method="post">
+    <div class="form-group ">
+     <label class="control-label " for="date">
+      วันที่
+     </label>
+     <div class="input-group">
+      <div class="input-group-addon">
+       <i class="fa fa-calendar">
+       </i>
+      </div>
+      <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
+     </div>
+    </div>
+    <div class="form-group">
+     <div>
+      <button class="btn btn-dark btn-block" name="submit" type="submit">
+       จอง
+      </button>
+     </div>
+    </div>
+   </form>
+  </div>
+ </div>
+</div>
+</div>
+                        </div>
+                     
+            </div>
+
+                    </div>
+               <!-- new -->
+                </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showElem() {
+  document.getElementById("myDIV").style.visibility = "visible";
+}
+
+function showElem2() {
+  document.getElementById("myDIV2").style.visibility = "visible";
+}
+
+function showElem3() {
+  document.getElementById("myDIV3").style.visibility = "visible";
+}
+        </script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+        <!-- Include Date Range Picker -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+        
+        <script>
+            $(document).ready(function(){
+                var date_input=$('input[name="date"]'); //our date input has the name "date"
+                var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+                date_input.datepicker({
+                    format: 'mm/dd/yyyy',
+                    container: container,
+                    todayHighlight: true,
+                    autoclose: true,
+                })
+            })
+        </script>
+  </body>
+</html>

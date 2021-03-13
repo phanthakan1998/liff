@@ -8,6 +8,8 @@
     />
     <title>My LIFF app</title>
     <link rel="stylesheet" href="css/style.css" media="all" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" media="all" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" media="all" />
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <style type="text/css">
       /* Always set the map height explicitly to define the size of the div
@@ -35,17 +37,11 @@
         font: 400 18px Roboto, Arial, sans-serif;
         overflow: hidden;
       }
-      .descriptionPlace {
-        width: "100%";
-        height: "100%";
-        border: 1px solid;
-        padding: 10px;
-        box-shadow: 5px 10px 8px #888888;
-        border-radius: 10px;
-      }
+
       .custom-map-control-button:hover {
         background: #ebebeb;
       }
+      
     </style>
     <script>
       let maps;
@@ -86,15 +82,11 @@
               return function () {
                 contentString = `
                 <div >
-      <div>${locations[i][0]}</div>
+      <div>${locations[i][0]}
+      <a href="hopitalCenter.html">
+      <button  class="button" style="vertical-align:middle"><span>จอง </span></button></a>
      
-      <button
-        type="button"
-        onclick="alert('Hello world!')"
-      >
-        Click Me!
-      </button>
-    </div>`;
+    `;
                 infoWindow.setContent(contentString);
                 infoWindow.open(maps, marker);
               };
@@ -147,6 +139,7 @@
     </script>
   </head>
   <body>
+    <script src="js/bootstrap.min.js"></script>
     <div id="map"></div>
 
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
@@ -154,7 +147,7 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDp0Rs1xK4F0bazA39iGpuhro-yWjNfHvc&callback=initMap&libraries=&v=weekly"
       async
     ></script>
-    <p id="os"><b>OS:</b></p>
+    <!-- <p id="os"><b>OS:</b></p>
     <p id="language"><b>Language:</b></p>
     <p id="version"><b>Version:</b></p>
     <p id="isInClient"><b>isInClient:</b></p>
@@ -181,7 +174,7 @@
     <button onclick="openWindow()">Open Window</button>
     <button id="btnScanCode" onclick="scanCode()">Scan Code</button>
     <button id="btnLogOut" onclick="logOut()">Log Out</button>
-    <button id="btnClose" onclick="closed()">Close</button>
+    <button id="btnClose" onclick="closed()">Close</button> -->
 
     <!-- <script src="js/vconsole.min.js"></script> -->
     <!-- <script>
