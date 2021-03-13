@@ -27,8 +27,8 @@
     <script>
       let map;
       var position = { lat: 13.84786, lng: 100.604274 };
-      // const image =
-      //     "https://www.flaticon.com/svg/vstatic/svg/1141/1141121.svg?token=exp=1615609037~hmac=e4112a99bb2d5e52fd7ccfc5f96699f9";
+      const image =
+          "https://www.flaticon.com/svg/vstatic/svg/1141/1141121.svg?token=exp=1615609037~hmac=e4112a99bb2d5e52fd7ccfc5f96699f9";
       function initMap() {
         map = new google.maps.Map(document.getElementById("map"), {
           center: position,
@@ -50,7 +50,7 @@
               var marker = new google.maps.Marker({
                 position: pos,
                 map: map,
-                // icon: image
+                icon: "/image/localization.png"
                 
               });
             },
