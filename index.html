@@ -41,71 +41,94 @@
       }
     </style>
     <script>
-      let map;
-      var position = { lat: 13.84786, lng: 100.604274 };
+      let maps;
+
+      var locations = [
+        ["โรงพยาบาลศรีนครินทร์", 16.4680574, 102.8300541],
+        ["โรงพยาบาลศูนย์ขอนแก่น", 16.4291172, 102.8491256],
+        ["โรงพยาบาลราชพฤกษ์", 16.4488145, 102.8302752],
+      ];
+
+      var position = { lat: 16.4741193, lng: 102.8139075 };
       const image =
-          "https://www.flaticon.com/svg/vstatic/svg/1141/1141121.svg?token=exp=1615609037~hmac=e4112a99bb2d5e52fd7ccfc5f96699f9";
+        "https://www.flaticon.com/svg/vstatic/svg/1141/1141121.svg?token=exp=1615609037~hmac=e4112a99bb2d5e52fd7ccfc5f96699f9";
+
       function initMap() {
-        map = new google.maps.Map(document.getElementById("map"), {
+        maps = new google.maps.Map(document.getElementById("map"), {
           center: position,
           zoom: 15,
         });
-        infoWindow = new google.maps.InfoWindow();
-        const locationButton = document.createElement("button");
-        locationButton.textContent = "Pan to Current Location";
-        locationButton.classList.add("custom-map-control-button");
-        map.controls[google.maps.ControlPosition.TOP_CENTER].push(
-          locationButton
-        );
-        locationButton.addEventListener("click", () => {
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(
-            (position) => {
-              const pos = {
-                lat: position.coords.latitude,
-                lng: position.coords.longitude,
-              };
-              infoWindow.setPosition(pos);
-              infoWindow.setContent("คุณอยู่ที่นี่");
-              infoWindow.open(map);
-              map.setCenter(pos);
-              var marker = new google.maps.Marker({
-                position: pos,
-                map: map,
-                icon: "/image/localization.png"
-                
-              });
-            },
-            () => {
-              handleLocationError(true, infoWindow, map.getCenter());
-            }
-          );
-        } else {
-          handleLocationError(false, infoWindow, map.getCenter());
-        } });
-        function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-          infoWindow.setPosition(pos);
-          infoWindow.setContent(
-            browserHasGeolocation
-              ? "Error: The Geolocation service failed."
-              : "Error: Your browser doesn't support geolocation."
-          );
-          infoWindow.open(map);
-        }
 
         var marker = new google.maps.Marker({
-          position: pos,
-          map: map,
+          position: position,
+          map: maps,
         });
 
-        var infowindow = new google.maps.InfoWindow({
-          content: "Hello World!",
-        });
+        var marker, i, infoWindow, contentString;
+        for (i = 0; i < locations.length; i++) {
+          
+           
+          marker = new google.maps.Marker({
+            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+            map: maps,
+          });
 
-        google.maps.event.addListener(marker, "click", function () {
-          infowindow.open(map, marker);
-        });
-        var marker, i, info;
+          infoWindow = new google.maps.InfoWindow();
+          google.maps.event.addListener(
+            marker,
+            "click",
+            (function (marker, i) {
+              return function () {
+                contentString = `<div> ${locations[i][0]}</div>`
+                infoWindow.setContent(contentString);
+                infoWindow.open(maps, marker);
+              };
+            })(marker, i)
+          );
+          
+        }
+
+        // const locationButton = document.createElement("button");
+        // locationButton.textContent = "Pan to Current Location";
+        // locationButton.classList.add("custom-map-control-button");
+        // map.controls[google.maps.ControlPosition.TOP_CENTER].push(
+        //   locationButton
+        // );
+        // locationButton.addEventListener("click", () => {
+        //   if (navigator.geolocation) {
+        //     navigator.geolocation.getCurrentPosition(
+        //       (position) => {
+        //         const pos = {
+        //           lat: position.coords.latitude,
+        //           lng: position.coords.longitude,
+        //         };
+        //         infoWindow.setPosition(pos);
+        //         infoWindow.setContent("คุณอยู่ที่นี่");
+        //         infoWindow.open(map);
+        //         map.setCenter(pos);
+        //         var marker = new google.maps.Marker({
+        //           position: pos,
+        //           map: map,
+        //           icon: "image/localization.png",
+        //         });
+        //       },
+        //       () => {
+        //         handleLocationError(true, infoWindow, map.getCenter());
+        //       }
+        //     );
+        //   } else {
+        //     handleLocationError(false, infoWindow, map.getCenter());
+        //   }
+        // });
+        // function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        //   infoWindow.setPosition(pos);
+        //   infoWindow.setContent(
+        //     browserHasGeolocation
+        //       ? "Error: The Geolocation service failed."
+        //       : "Error: Your browser doesn't support geolocation."
+        //   );
+        //   infoWindow.open(map);
+        // }
       }
     </script>
   </head>
