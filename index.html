@@ -15,7 +15,6 @@
       #map {
         height: 100%;
       }
-
       /* Optional: Makes the sample page fill the window. */
       html,
       body {
@@ -35,6 +34,14 @@
         height: 40px;
         font: 400 18px Roboto, Arial, sans-serif;
         overflow: hidden;
+      }
+      .descriptionPlace {
+        width: "100%";
+        height: "100%";
+        border: 1px solid;
+        padding: 10px;
+        box-shadow: 5px 10px 8px #888888;
+        border-radius: 10px;
       }
       .custom-map-control-button:hover {
         background: #ebebeb;
@@ -66,8 +73,6 @@
 
         var marker, i, infoWindow, contentString;
         for (i = 0; i < locations.length; i++) {
-          
-           
           marker = new google.maps.Marker({
             position: new google.maps.LatLng(locations[i][1], locations[i][2]),
             map: maps,
@@ -79,13 +84,22 @@
             "click",
             (function (marker, i) {
               return function () {
-                contentString = `<div>${locations[i][0]}</div>`
+                contentString = `
+                <div >
+      <div>${locations[i][0]}</div>
+     
+      <button
+        type="button"
+        onclick="alert('Hello world!')"
+      >
+        Click Me!
+      </button>
+    </div>`;
                 infoWindow.setContent(contentString);
                 infoWindow.open(maps, marker);
               };
             })(marker, i)
           );
-          
         }
 
         // const locationButton = document.createElement("button");
