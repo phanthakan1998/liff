@@ -44,7 +44,7 @@
       
     </style>
     <script>
-      let maps;
+      let maps, infoWindow;
 
       var locations = [
         ["โรงพยาบาลศรีนครินทร์", 16.4680574, 102.8300541],
@@ -61,6 +61,15 @@
           center: position,
           zoom: 15,
         });
+
+        
+
+
+
+        
+
+
+
 
         var marker = new google.maps.Marker({
           position: position,
@@ -82,9 +91,9 @@
             (function (marker, i) {
               return function () {
                 contentString = `
-                <div style = "align-self: center; justify-self: center;"><div style = "align-self: center; justify-self: center;">${locations[i][0]}<br>
+                <div style = "align-self: center; justify-self: center;"><div style = "align-self: center; justify-self: center; font-size: 15px">${locations[i][0]}<br>
       
-      <a class="btn btn-dark btn-block" href="hopitalCenter.html" role="button "  >จอง</a>
+      <a class="btn btn-dark btn-block" href="hopitalCenter.html" role="button " style="width: 150px ">จอง</a>
       </div></div>
     `;
 
