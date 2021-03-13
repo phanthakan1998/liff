@@ -64,7 +64,7 @@ function createUniversalLink() {}
       }
 
       async function main() {
-        alert("LINE Developers x Skooldio");
+        // alert("LINE Developers x Skooldio");
         await liff.init({ liffId: "1655749684-6ZD8QKm7" });
         getEnvironment();
         getUserProfile();
