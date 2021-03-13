@@ -23,6 +23,22 @@
         margin: 0;
         padding: 0;
       }
+      .custom-map-control-button {
+        appearance: button;
+        background-color: #fff;
+        border: 0;
+        border-radius: 2px;
+        box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        margin: 10px;
+        padding: 0 0.5em;
+        height: 40px;
+        font: 400 18px Roboto, Arial, sans-serif;
+        overflow: hidden;
+      }
+      .custom-map-control-button:hover {
+        background: #ebebeb;
+      }
     </style>
     <script>
       let map;
@@ -35,7 +51,13 @@
           zoom: 15,
         });
         infoWindow = new google.maps.InfoWindow();
-
+        const locationButton = document.createElement("button");
+        locationButton.textContent = "Pan to Current Location";
+        locationButton.classList.add("custom-map-control-button");
+        map.controls[google.maps.ControlPosition.TOP_CENTER].push(
+          locationButton
+        );
+        locationButton.addEventListener("click", () => {
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(
             (position) => {
@@ -60,7 +82,7 @@
           );
         } else {
           handleLocationError(false, infoWindow, map.getCenter());
-        }
+        } });
         function handleLocationError(browserHasGeolocation, infoWindow, pos) {
           infoWindow.setPosition(pos);
           infoWindow.setContent(
@@ -198,7 +220,7 @@
       }
 
       async function main() {
-        alert("LINE Developers x Skooldio");
+        // alert("LINE Developers x Skooldio");
         await liff.init({ liffId: "1655749684-6ZD8QKm7" });
         getEnvironment();
         getUserProfile();
